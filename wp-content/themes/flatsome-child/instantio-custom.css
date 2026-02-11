@@ -1,0 +1,308 @@
+/**
+ * Instantio Custom Styles - Suggested Products Override
+ * This file contains custom styles for the suggested products feature
+ * Safe from plugin updates
+ */
+
+/* Suggested Products - Positioned outside cart popup on the left */
+.ins-suggested-products {
+    position: relative;
+    left: 935px;
+    width: 280px;
+    height: 100%;
+    padding: 16px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.ins-suggested-products.collapsed {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ins-suggested-products .ins-suggested-products-header {
+    margin-bottom: 16px;
+    flex-shrink: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.ins-suggested-products .ins-suggested-products-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+}
+
+/* Hide the internal toggle since we'll use external toggle */
+.ins-suggested-products .ins-suggested-toggle {
+    display: none;
+}
+
+.ins-suggested-products .ins-suggested-content {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.ins-suggested-products .ins-suggested-products-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 8px;
+}
+
+.ins-suggested-products .ins-suggested-products-slider::-webkit-scrollbar {
+    width: 4px;
+}
+
+.ins-suggested-products .ins-suggested-products-slider::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.ins-suggested-products .ins-suggested-products-slider::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.ins-suggested-products .ins-suggested-products-slider::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+.ins-suggested-products .ins-suggested-product-item {
+    flex: 0 0 auto;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.ins-suggested-products .ins-suggested-product-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-info {
+    padding: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-info .ins-suggested-product-title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0 0 4px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-info .ins-suggested-product-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-info .ins-suggested-product-title a:hover {
+    color: #e9570a;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-info .ins-suggested-product-price {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e9570a;
+    margin: 0 0 6px 0;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-info .ins-suggested-product-price ins {
+    text-decoration: none;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-info .ins-suggested-product-price del {
+    font-size: 11px;
+    color: #999;
+    margin-right: 4px;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-info .add_to_cart_button {
+    width: 100%;
+    padding: 5px 8px;
+    background: #e9570a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-info .add_to_cart_button:hover {
+    background: #d44a08;
+}
+
+.ins-suggested-products .ins-suggested-product-item .ins-suggested-product-info .add_to_cart_button.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Toggle button for suggested products (positioned on cart left side) */
+.ins-suggested-products-toggle-btn {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 60px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.ins-suggested-products-toggle-btn:hover {
+    background: #f5f5f5;
+}
+
+.ins-suggested-products-toggle-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.ins-suggested-products-toggle-btn.collapsed svg {
+    transform: rotate(180deg);
+}
+
+/* Position suggested products relative to the cart popup */
+.ins-checkout-layout.popup .ins-suggested-products {
+    height: 100%;
+}
+
+/* For slide-in cart (right side) */
+.ins-checkout-layout.slide .ins-suggested-products {
+    height: 100%;
+}
+
+/* Addon Modal Styles */
+a#addon_modal {
+    padding: 10px 0 7px;
+    display: block;
+    margin-left: 0px;
+}
+
+a#addon_modal img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.modal-content a#addon_modal {
+    padding: 0 10px;
+}
+
+/* Modal Content */
+#myModal1 .quantity input[type="number"] {
+    height: 45px;
+    max-width: 25px;
+    margin-top: 0;
+}
+
+#myModal1 .r,
+.xoo-wsc-remove,
+.xoo-wsc-ptotal {
+    display: none !important;
+}
+
+.modal-content #pa_size {
+    display: block !important;
+}
+
+#myModal1 .modal-content span.close {
+    display: none;
+}
+
+#myModal1 .modal-content #pa_size {
+    display: block !important;
+    margin: 30px auto 0;
+    max-width: 100%;
+}
+
+#myModal1 .woocommerce-variation-add-to-cart {
+    margin-top: 0 !important;
+}
+
+#myModal1 .quantity.buttons_added {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 10px 0 20px !important;
+}
+
+#myModal1 .single_variation_wrap button.single_add_to_cart_button.button.alt {
+    width: 100% !important;
+    margin: 0 auto;
+    float: none;
+}
+
+#myModal1 .fancybox-wrap.fancybox-desktop.fancybox-type-inline.fancybox-opened {
+    width: 300px !important;
+}
+
+/* Responsive */
+@media(max-width:767px) {
+    #myModal1 .fancybox-wrap.fancybox-desktop.fancybox-type-inline.fancybox-opened {
+        width: 300px !important;
+        height: auto !important;
+        margin: 0px auto !important;
+        left: 0 !important;
+        right: 0;
+    }
+}
